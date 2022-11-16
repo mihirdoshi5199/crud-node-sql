@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+</head>
+
+<style>
+table {
+  border: 1px solid black;
+  width:100%
+}
+
+tr{
+    border: 1px solid black; 
+}
+
+td {
+    border: 1px solid black;
+}
+
+th{
+    border: 1px solid black;
+    max-width: max-content;
+}
+
+</style>
+<body>
+    <h1>Employees List</h1>
+
+    <table>
+        <tr style ="border:1px solid black">
+          <!---  <th>Employee ID</th>-->
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile Number</th>
+            <th>Action</th>
+        </tr>
+
+        <% if(employee.length > 0){ %>
+            <% for(var i=0; i<employee.length; i++){%>
+
+                <tr>
+                   <!---<td><%- employee[i].Emp_id %></td>-->
+                    <td> <%- employee[i].Name %></td>
+                    <td> <%- employee[i].Email %></td>
+                    <td> <%- employee[i].Mbnum %></td>
+                    <td><a href="/delete-employee?Emp_id=<%- employee[i].Emp_id %>">Delete</a></td>
+                    <td><a href="/update-employee?Emp_id=<%- employee[i].Emp_id %>">Update</a></td>
+                </tr>
+            <% } %>
+
+        <%} else {%>}
+                <h1>Employee data not found!</h1>
+        <% } %>
+    </table>
+</body>
+</html>

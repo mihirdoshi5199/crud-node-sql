@@ -1,0 +1,23 @@
+<html>   
+    
+<h1>Update Registration form</h1>
+
+   <body>
+   <form action="" method="post">
+        <input type="hidden" name="Emp_id" value="<%= employee[0].Emp_id %>" >
+        <input type="text" name="Name" value="<%= employee[0].Name %> " placeholder="Full Name" required><br />
+        <input type="email" name="Email" value="<%= employee[0].Email %> " placeholder="Email" required> <br />
+        <input type="number" name="Mbnum" value="<%= employee[0].Mbnum %>" placeholder="Mobile Number" required> <br />
+
+        <input type="submit" value="Submit"> 
+
+        <a href="/employee.ejs">
+            <button>Cancel</button>
+        </a>
+    </form>
+    </body>
+    </html>
+
+    <input type="hidden" name="Emp_id" value="<%= employee[0].Emp_id %>" >
+
+ 
